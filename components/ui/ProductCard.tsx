@@ -3,6 +3,7 @@ import { Edit, Trash2, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { Product } from "../types/products";
 import { useCartStore } from "../store/cartstore";
+import toast from "react-hot-toast"; // ✅ Import toast
 
 interface ProductCardProps {
   product: Product;
@@ -19,6 +20,9 @@ export default function ProductCard({
 
   const handleAddToCart = () => {
     addItem(product);
+    toast.success(`"${product.title}" added to cart 🛒`, {
+      position: "top-right",
+    }); // ✅ Toast after adding
   };
 
   return (
