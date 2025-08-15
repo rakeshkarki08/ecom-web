@@ -7,7 +7,7 @@ import { useCartStore } from "./store/cartstore";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { toggleCart, getTotalItems } = useCartStore();
+  const { getTotalItems } = useCartStore();
   const totalItems = getTotalItems();
 
   return (
@@ -43,8 +43,8 @@ export default function Navbar() {
           {/* Cart & Hamburger Menu */}
           <div className="flex items-center space-x-4">
             {/* Cart Button */}
-            <button
-              onClick={toggleCart}
+            <Link
+              href="/cart"
               className="relative p-2 text-gray-300 hover:text-blue-400 transition-colors group"
             >
               <ShoppingCart className="h-6 w-6 group-hover:scale-110 transition-transform" />
@@ -53,7 +53,7 @@ export default function Navbar() {
                   {totalItems > 99 ? "99+" : totalItems}
                 </span>
               )}
-            </button>
+            </Link>
 
             {/* Hamburger Menu */}
             <button
