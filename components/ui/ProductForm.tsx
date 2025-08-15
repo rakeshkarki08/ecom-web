@@ -90,7 +90,6 @@ export default function ProductForm({
             />
           </div>
 
-          {/* Price */}
           <div>
             <label
               htmlFor="price"
@@ -112,7 +111,6 @@ export default function ProductForm({
             />
           </div>
 
-          {/* Image URL */}
           <div>
             <label
               htmlFor="image"

@@ -14,11 +14,13 @@ export default function Navbar() {
     <nav className="glass-morphism sticky top-0 z-50 border-b border-gray-700/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Package className="h-8 w-8 text-blue-400" />
             <span className="text-xl font-bold gradient-text">ModernShop</span>
           </Link>
 
+          {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <Link
@@ -38,7 +40,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href={"/cart"} className="flex items-center space-x-4">
+          {/* Cart & Hamburger Menu */}
+          <div className="flex items-center space-x-4">
+            {/* Cart Button */}
             <button
               onClick={toggleCart}
               className="relative p-2 text-gray-300 hover:text-blue-400 transition-colors group"
@@ -51,6 +55,7 @@ export default function Navbar() {
               )}
             </button>
 
+            {/* Hamburger Menu */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-gray-300 hover:text-blue-400 transition-colors"
@@ -69,10 +74,11 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-          </Link>
+          </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-700/50">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800/90 backdrop-blur-sm">
